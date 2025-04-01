@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RenMat IT Technologies | Innovative IT Solutions & Digital Transformation Experts</title>
+  <meta name="description" content="RenMat IT Technologies provides cutting-edge IT solutions including Power Platform, Dynamics 365, AI services, and cybersecurity for businesses of all sizes.">
+  <meta name="keywords" content="IT solutions, Power Platform, Dynamics 365, Microsoft 365, AI services, cybersecurity, digital transformation, business automation">
+  <meta name="author" content="RenMat IT Technologies">
+  <meta property="og:title" content="RenMat IT Technologies | Innovative IT Solutions">
+  <meta property="og:description" content="Empowering businesses with cutting-edge IT solutions and digital transformation strategies">
+  <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4D0BAQF3q-dLPxzwpw/company-logo_200_200/B4DZXR3v.GG4AQ-/0/1742982808029?e=2147483647&v=beta&t=E67CVx77zQLOklxG_s7ku60xvTKTjsn174PoGK8a7Zs">
+  <meta property="og:url" content="https://www.renmatit.co.za">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.renmatit.co.za">
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  
+  <style>
+    /* Disable right-click */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ff4d4d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>'), auto;
+    }
+    
+    /* Custom Cursor */
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(255, 77, 77, 0.5);
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .cursor-follower {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(255, 77, 77, 0.3);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease, border 0.4s ease;
+    }
+    
+    .cursor-active {
+      transform: translate(-50%, -50%) scale(1.5);
+      background-color: rgba(255, 77, 77, 0.8);
+    }
+    
+    .cursor-follower-active {
+      transform: translate(-50%, -50%) scale(0.8);
+      border: 2px solid rgba(255, 77, 77, 0.8);
+    }
+    
+    :root {
+      --primary: #ff4d4d;
+      --secondary: #e60636;
+      --dark: #0a0a0a;
+      --darker: #050505;
+      --light: #ffffff;
+      --gray: #cccccc;
+      --tech-gradient: linear-gradient(135deg, #ff4d4d 0%, #e60636 100%);
+      --danger-gradient: linear-gradient(135deg, #ff4d4d 0%, #800000 100%);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 77, 77, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 80% 70%, rgba(255, 77, 77, 0.05) 0%, transparent 20%),
+        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-blend-mode: overlay;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    /* Header Styles */
+    header {
+      padding: 2rem 0;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(180deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255, 77, 77, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    
+    .logo {
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .logo img {
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: drop-shadow(0 0 10px var(--primary));
+      border: 2px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .logo img:hover {
+      transform: scale(1.05) rotate(10deg);
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      background: var(--tech-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+      margin-top: 20px;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(5,5,5,0.9);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(255, 77, 77, 0.2);
+    }
+    
+    nav a {
+      margin: 0 1.5rem;
+      font-size: 1.1rem;
+      color: var(--light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .section {
+      margin: 8rem 0;
+      position: relative;
+      opacity: 0;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--tech-gradient);
+      border-radius: 3px;
+    }
+    
+    /* About Us Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 3rem;
+      background: rgba(5,5,5,0.7);
+      border-radius: 15px;
+      padding: 3rem;
+      border: 1px solid rgba(255, 77, 77, 0.2);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-content::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,77,77,0.1) 0%, transparent 70%);
+      transform: rotate(30deg);
+      z-index: -1;
+    }
+    
+    .about-content:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 77, 77, 0.3);
+    }
+    
+    .about-text {
+      flex: 1;
+      position: relative;
+    }
+    
+    .about-text p {
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .about-text p::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 77, 77, 0.3);
+      transition: all 0.5s ease;
+      transform: perspective(1000px) rotateY(10deg);
+    }
+    
+    .about-image:hover {
+      transform: perspective(1000px) rotateY(0deg) scale(1.05);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: all 0.5s ease;
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.1);
+    }
+    
+    /* Mission/Vision/Values */
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .feature-card {
+      background: rgba(5,5,5,0.7);
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 77, 77, 0.1);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--tech-gradient);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+    }
+    
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    /* Flipping Solution Cards with Different Animations */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    /* Power Platform Card Animation */
+    .flip-card.power-platform .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.power-platform:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    /* Dynamics 365 Card Animation */
+    .flip-card.dynamics-365 .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.dynamics-365:hover .flip-card-inner {
+      transform: rotateX(180deg);
+    }
+    
+    /* Microsoft 365 Card Animation */
+    .flip-card.microsoft-365 .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.microsoft-365:hover .flip-card-inner {
+      transform: rotateY(180deg) rotateZ(10deg);
+    }
+    
+    /* IT Infrastructure Card Animation */
+    .flip-card.infrastructure .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.infrastructure:hover .flip-card-inner {
+      transform: rotateX(180deg) rotateY(180deg);
+    }
+    
+    /* Business Automation Card Animation */
+    .flip-card.automation .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.automation:hover .flip-card-inner {
+      transform: rotateY(180deg) scale(0.95);
+    }
+    
+    /* Data Analytics Card Animation */
+    .flip-card.analytics .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.analytics:hover .flip-card-inner {
+      transform: rotateZ(180deg);
+    }
+    
+    /* AI Strategy Card Animation */
+    .flip-card.ai-strategy .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.ai-strategy:hover .flip-card-inner {
+      transform: rotateY(180deg) rotateX(20deg);
+    }
+    
+    /* Machine Learning Card Animation */
+    .flip-card.machine-learning .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.machine-learning:hover .flip-card-inner {
+      transform: rotateX(180deg) rotateZ(10deg);
+    }
+    
+    /* Chatbots Card Animation */
+    .flip-card.chatbots .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.chatbots:hover .flip-card-inner {
+      transform: rotateY(180deg) skewY(10deg);
+    }
+    
+    /* Computer Vision Card Animation */
+    .flip-card.vision .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.vision:hover .flip-card-inner {
+      transform: rotateX(180deg) rotateY(20deg);
+    }
+    
+    /* Threat Protection Card Animation */
+    .flip-card.threat .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.threat:hover .flip-card-inner {
+      transform: rotateY(180deg) translateZ(50px);
+    }
+    
+    /* Data Encryption Card Animation */
+    .flip-card.encryption .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.encryption:hover .flip-card-inner {
+      transform: rotateX(180deg) translateZ(50px);
+    }
+    
+    /* Identity Management Card Animation */
+    .flip-card.identity .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.identity:hover .flip-card-inner {
+      transform: rotateY(180deg) rotateZ(180deg);
+    }
+    
+    /* Network Security Card Animation */
+    .flip-card.network .flip-card-inner {
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card.network:hover .flip-card-inner {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(10deg);
+    }
+    
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+      height: 300px;
+    }
+    
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+    
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .flip-card-front {
+      background: rgba(5,5,5,0.7);
+      border: 1px solid rgba(255, 77, 77, 0.1);
+      backdrop-filter: blur(5px);
+      transform-style: preserve-3d;
+    }
+    
+    .flip-card-back {
+      background: var(--tech-gradient);
+      color: white;
+      transform-style: preserve-3d;
+    }
+    
+    /* Set initial rotation for back faces based on animation type */
+    .flip-card.power-platform .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-card.dynamics-365 .flip-card-back {
+      transform: rotateX(180deg);
+    }
+    
+    .flip-card.microsoft-365 .flip-card-back {
+      transform: rotateY(180deg) rotateZ(-10deg);
+    }
+    
+    .flip-card.infrastructure .flip-card-back {
+      transform: rotateX(180deg) rotateY(180deg);
+    }
+    
+    .flip-card.automation .flip-card-back {
+      transform: rotateY(180deg) scale(1.05);
+    }
+    
+    .flip-card.analytics .flip-card-back {
+      transform: rotateZ(180deg);
+    }
+    
+    .flip-card.ai-strategy .flip-card-back {
+      transform: rotateY(180deg) rotateX(-20deg);
+    }
+    
+    .flip-card.machine-learning .flip-card-back {
+      transform: rotateX(180deg) rotateZ(-10deg);
+    }
+    
+    .flip-card.chatbots .flip-card-back {
+      transform: rotateY(180deg) skewY(-10deg);
+    }
+    
+    .flip-card.vision .flip-card-back {
+      transform: rotateX(180deg) rotateY(-20deg);
+    }
+    
+    .flip-card.threat .flip-card-back {
+      transform: rotateY(180deg) translateZ(-50px);
+    }
+    
+    .flip-card.encryption .flip-card-back {
+      transform: rotateX(180deg) translateZ(-50px);
+    }
+    
+    .flip-card.identity .flip-card-back {
+      transform: rotateY(180deg) rotateZ(-180deg);
+    }
+    
+    .flip-card.network .flip-card-back {
+      transform: rotateX(180deg) rotateY(180deg) rotateZ(-10deg);
+    }
+    
+    .flip-card-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .flip-card:hover .flip-card-icon {
+      transform: scale(1.2);
+    }
+    
+    .flip-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .flip-card:hover h3 {
+      color: var(--primary);
+    }
+    
+    .flip-card p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    .flip-card-back p {
+      color: white;
+    }
+    
+    .flip-card .btn {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: var(--tech-gradient);
+      color: var(--light);
+      border-radius: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .flip-card .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+    }
+    
+    /* Video Section */
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .video-card {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(255, 77, 77, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .video-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 40px rgba(255, 77, 77, 0.5);
+    }
+    
+    .video-card iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Animated Stats */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(5,5,5,0.7);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 77, 77, 0.1);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      background: var(--tech-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--gray);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* Team Sections */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    /* Team Member Card Styles */
+    .team-member-card {
+      background-color: transparent;
+      perspective: 1000px;
+      height: 400px;
+    }
+    
+    .team-member-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    .team-member-card:hover .team-member-card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .team-member-front, .team-member-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .team-member-front {
+      background: rgba(5,5,5,0.7);
+      border: 1px solid rgba(255, 77, 77, 0.1);
+      backdrop-filter: blur(5px);
+    }
+    
+    .team-member-back {
+      background: var(--tech-gradient);
+      color: white;
+      transform: rotateY(180deg);
+      overflow-y: auto;
+    }
+    
+    .member-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      border: 3px solid var(--primary);
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 30px rgba(255, 77, 77, 0.3);
+    }
+    
+    .team-member-card:hover .member-image {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px rgba(255, 77, 77, 0.5);
+    }
+    
+    .team-member-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .team-member-card p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      color: var(--gray);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .team-member-bio {
+      margin: 1rem 0;
+      color: var(--light);
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    .team-member-skills {
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+    
+    .team-member-skills h4 {
+      color: var(--light);
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--light);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(5,5,5,0.7);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 77, 77, 0.2);
+      backdrop-filter: blur(5px);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--gray);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(10,10,10,0.7);
+      border: 1px solid rgba(255, 77, 77, 0.2);
+      border-radius: 5px;
+      color: var(--light);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--tech-gradient);
+      color: var(--light);
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+    }
+    
+    /* Thank You Section */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: rgba(5,5,5,0.9);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 77, 77, 0.3);
+      margin-top: 2rem;
+      backdrop-filter: blur(5px);
+    }
+    
+    .thank-you h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .thank-you p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--gray);
+    }
+    
+    .thank-you-icon {
+      font-size: 4rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-30px);}
+      60% {transform: translateY(-15px);}
+    }
+    
+    /* WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      background: rgba(5,5,5,0.9);
+      border-top: 1px solid rgba(255, 77, 77, 0.2);
+      margin-top: 5rem;
+      backdrop-filter: blur(5px);
+    }
+    
+    .footer-logo {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 10px var(--primary));
+      border: 2px solid var(--primary);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-logo:hover {
+      transform: rotate(15deg) scale(1.1);
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-media a {
+      color: var(--gray);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-media a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Pulse Animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 3s infinite;
+    }
+    
+    /* Binary Rain Animation */
+    .binary-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      opacity: 0.1;
+    }
+    
+    .binary-digit {
+      position: absolute;
+      color: var(--primary);
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      opacity: 0;
+      animation: fall linear infinite;
+    }
+    
+    @keyframes fall {
+      to {
+        transform: translateY(100vh);
+      }
+    }
+    
+    /* Glitch Effect */
+    .glitch {
+      position: relative;
+    }
+    
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark);
+    }
+    
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 #ff00ff;
+      clip: rect(24px, 550px, 90px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+    
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 #00ffff;
+      clip: rect(85px, 550px, 140px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+    
+    @keyframes glitch-anim {
+      0% { clip: rect(31px, 9999px, 94px, 0); }
+      10% { clip: rect(112px, 9999px, 76px, 0); }
+      20% { clip: rect(85px, 9999px, 77px, 0); }
+      30% { clip: rect(27px, 9999px, 97px, 0); }
+      40% { clip: rect(64px, 9999px, 98px, 0); }
+      50% { clip: rect(61px, 9999px, 85px, 0); }
+      60% { clip: rect(99px, 9999px, 114px, 0); }
+      70% { clip: rect(34px, 9999px, 115px, 0); }
+      80% { clip: rect(98px, 9999px, 129px, 0); }
+      90% { clip: rect(43px, 9999px, 96px, 0); }
+      100% { clip: rect(82px, 9999px, 64px, 0); }
+    }
+    
+    @keyframes glitch-anim2 {
+      0% { clip: rect(65px, 9999px, 119px, 0); }
+      10% { clip: rect(25px, 9999px, 145px, 0); }
+      20% { clip: rect(50px, 9999px, 49px, 0); }
+      30% { clip: rect(60px, 9999px, 92px, 0); }
+      40% { clip: rect(10px, 9999px, 109px, 0); }
+      50% { clip: rect(2px, 9999px, 16px, 0); }
+      60% { clip: rect(78px, 9999px, 52px, 0); }
+      70% { clip: rect(100px, 9999px, 120px, 0); }
+      80% { clip: rect(79px, 9999px, 103px, 0); }
+      90% { clip: rect(84px, 9999px, 44px, 0); }
+      100% { clip: rect(62px, 9999px, 43px, 0); }
+    }
+    
+    /* Holographic Effect */
+    .holographic {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .holographic::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 77, 77, 0.1),
+        rgba(255, 77, 77, 0.05),
+        rgba(255, 77, 77, 0.1),
+        rgba(255, 77, 77, 0.05),
+        rgba(255, 77, 77, 0.1)
+      );
+      transform: rotate(45deg);
+      animation: holographic 8s linear infinite;
+      z-index: -1;
+    }
+    
+    @keyframes holographic {
+      0% { transform: rotate(45deg) translateX(-50%); }
+      100% { transform: rotate(45deg) translateX(50%); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .logo {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+      
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .section h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .section {
+        margin: 5rem 0;
+      }
+      
+      .about-content {
+        padding: 1.5rem;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .team-member-card {
+        height: 450px;
+      }
+    }
+    </style>
+
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <!-- Binary Rain Background -->
+  <div class="binary-rain"></div>
+  
+  <!-- Particles.js Background -->
+  <div id="particles-js"></div>
+  
+  <header class="holographic">
+    <div class="logo">
+      <img src="https://media.licdn.com/dms/image/v2/D4D0BAQF3q-dLPxzwpw/company-logo_200_200/B4DZXR3v.GG4AQ-/0/1742982808029?e=2147483647&v=beta&t=E67CVx77zQLOklxG_s7ku60xvTKTjsn174PoGK8a7Zs" alt="RenMat IT Technologies Logo">
+    </div>
+    <h1 class="glitch" data-text="RenMat IT Technologies">RenMat IT Technologies</h1>
+    <p>Empowering businesses with cutting-edge IT solutions and digital transformation strategies</p>
+  </header>
+  
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#ai">AI Services</a>
+    <a href="#cybersecurity">Security</a>
+    <a href="#team">Team</a>
+    <a href="#non-tech-team">Management</a>
+    <a href="#videos">Videos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <div class="container">
+    
+    <!-- About Us Section -->
+    <section id="about" class="section">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>RenMat IT Technologies is a leading provider of innovative IT solutions, specializing in digital transformation, AI-powered services, and cybersecurity. Founded in 2015, we've grown from a small startup to a trusted partner for businesses across multiple industries.</p>
+          <p>Our mission is to empower organizations with cutting-edge technology that drives efficiency, enhances security, and creates competitive advantages. We combine technical expertise with business acumen to deliver solutions that align with your strategic objectives.</p>
+          <p>What sets us apart is our commitment to understanding your unique challenges before proposing solutions. We don't believe in one-size-fits-all approaches - every solution we deliver is tailored to your specific needs and goals.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://www.renmatprint.com/assets/img/about-2.jpg" alt="RenMat IT Team">
+        </div>
+      </div>
+      
+      <div class="about-features">
+        <div class="feature-card">
+          <h3>Our Mission</h3>
+          <p>To empower businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage in the digital age.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Our Vision</h3>
+          <p>To be the most trusted partner for digital transformation, recognized for our technical excellence and customer-centric approach.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Our Values</h3>
+          <p>Innovation, Integrity, Excellence, Collaboration, and Customer Success guide everything we do at RenMat IT Technologies.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="home" class="section">
+      <h2>Innovating Tomorrow's Technology Today</h2>
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number" id="clients-count">0</div>
+          <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="projects-count">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="team-count">0</div>
+          <div class="stat-label">Expert Team Members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="years-count">0</div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions" class="section">
+      <h2>Our Solutions</h2>
+      <div class="cards-container">
+        <div class="flip-card power-platform">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fab fa-microsoft"></i>
+              </div>
+              <h3>Power Platform</h3>
+              <p>Build custom apps and automate workflows</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Power Platform</h3>
+              <p>Transform your business processes with Microsoft's low-code platform.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Power Apps development</li>
+                <li>Power Automate workflows</li>
+                <li>Power BI dashboards</li>
+                <li>Power Virtual Agents</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card dynamics-365">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <h3>Dynamics 365</h3>
+              <p>Unify your business operations</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Dynamics 365</h3>
+              <p>End-to-end business management solutions tailored to your needs.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>CRM Implementation</li>
+                <li>ERP Solutions</li>
+                <li>Custom Development</li>
+                <li>Integration Services</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card microsoft-365">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h3>Microsoft 365</h3>
+              <p>Enhance productivity</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Microsoft 365</h3>
+              <p>Maximize your productivity with our implementation and optimization services.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Migration Services</li>
+                <li>SharePoint Solutions</li>
+                <li>Teams Deployment</li>
+                <li>Security Configuration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card infrastructure">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h3>IT Infrastructure</h3>
+              <p>Reliable and scalable solutions</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>IT Infrastructure</h3>
+              <p>Build a robust IT foundation for your business growth.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Network Design</li>
+                <li>Cloud Services</li>
+                <li>Disaster Recovery</li>
+                <li>Managed Services</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card automation">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Business Automation</h3>
+              <p>Streamline operations</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Business Automation</h3>
+              <p>Eliminate manual processes and reduce operational costs.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Workflow Automation</li>
+                <li>RPA Solutions</li>
+                <li>Document Processing</li>
+                <li>System Integration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card analytics">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Data Analytics</h3>
+              <p>Turn data into insights</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Data Analytics</h3>
+              <p>Unlock the power of your data with our analytics solutions.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Business Intelligence</li>
+                <li>Data Warehousing</li>
+                <li>Predictive Modeling</li>
+                <li>Dashboard Development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- AI Solutions Section -->
+    <section id="ai" class="section">
+      <h2>AI-Powered Solutions</h2>
+      <div class="cards-container">
+        <div class="flip-card ai-strategy">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>AI Strategy</h3>
+              <p>Develop a comprehensive roadmap</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>AI Strategy</h3>
+              <p>Align AI initiatives with your business objectives for maximum impact.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Use Case Identification</li>
+                <li>ROI Analysis</li>
+                <li>Implementation Roadmap</li>
+                <li>Change Management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card machine-learning">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3>Machine Learning</h3>
+              <p>Implement predictive models</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Machine Learning</h3>
+              <p>Build models that learn from your data and improve over time.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Predictive Maintenance</li>
+                <li>Demand Forecasting</li>
+                <li>Anomaly Detection</li>
+                <li>Recommendation Systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card chatbots">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <h3>Chatbots & NLP</h3>
+              <p>Enhance customer experience</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Chatbots & NLP</h3>
+              <p>Intelligent conversational interfaces for better customer engagement.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Virtual Assistants</li>
+                <li>Sentiment Analysis</li>
+                <li>Text Classification</li>
+                <li>Language Translation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card vision">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h3>Computer Vision</h3>
+              <p>Extract insights from images</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Computer Vision</h3>
+              <p>Automate visual inspection and analysis tasks.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Object Detection</li>
+                <li>Facial Recognition</li>
+                <li>Quality Control</li>
+                <li>Document Analysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Cybersecurity Section -->
+    <section id="cybersecurity" class="section">
+      <h2>Cybersecurity Solutions</h2>
+      <div class="cards-container">
+        <div class="flip-card threat">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-shield-virus"></i>
+              </div>
+              <h3>Threat Protection</h3>
+              <p>Advanced protection</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Threat Protection</h3>
+              <p>Comprehensive security against evolving cyber threats.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Endpoint Protection</li>
+                <li>Email Security</li>
+                <li>Firewall Management</li>
+                <li>Threat Intelligence</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card encryption">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h3>Data Encryption</h3>
+              <p>Protect sensitive information</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Data Encryption</h3>
+              <p>Secure your data at rest and in transit.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Database Encryption</li>
+                <li>File-Level Encryption</li>
+                <li>Key Management</li>
+                <li>Compliance Solutions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card identity">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <h3>Identity Management</h3>
+              <p>Secure authentication</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Identity Management</h3>
+              <p>Control access to your systems and data.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Multi-Factor Authentication</li>
+                <li>Single Sign-On</li>
+                <li>Privileged Access</li>
+                <li>Identity Governance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flip-card network">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="flip-card-icon">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <h3>Network Security</h3>
+              <p>Protect infrastructure</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Network Security</h3>
+              <p>Secure your network from external and internal threats.</p>
+              <ul style="text-align: left; margin: 1rem 0; width: 100%;">
+                <li>Firewall Configuration</li>
+                <li>Intrusion Detection</li>
+                <li>VPN Solutions</li>
+                <li>Network Monitoring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- IT Team Section -->
+    <section id="team" class="section">
+      <h2>Our IT Team</h2>
+      <div class="team-grid">
+        <!-- Tiyani -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://yt3.googleusercontent.com/i4pxAVh9pXB2CFdxBEn0AH3XJc-yfFyG84T4BaNvC6T2htknROXbA61fQI5OpthHEU1tv-gwog=s160-c-k-c0x00ffffff-no-rj" alt="Tiyani" class="member-image">
+              <h3>Tiyani</h3>
+              <p>Chief Technology Officer</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/tiyani-magomani-23b33b71?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAA8tco8BjeLVEDOq6TJHaSsjXEikCLV7qnU&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BuPG1swAVQaGqLISqKSX3FQ%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Tiyani</h3>
+              <p class="team-member-bio">Tiyani drives our technical vision and ensures our solutions meet the highest standards of excellence.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Enterprise Architecture, Digital Transformation, Cloud Computing, IT Strategy, Team Leadership</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bonny -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://media.licdn.com/dms/image/v2/C4D03AQEBHwOP3docEg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1652910466389?e=1747267200&v=beta&t=sMmeKYU3xzFuVajwV0aiN2CLrxEZxOYaTO4VykQTau0" alt="Bonny" class="member-image">
+              <h3>Bonny</h3>
+              <p>IT Business Development Representative</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/bonfacio-venacio/"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Bonny</h3>
+              <p class="team-member-bio">Bonny connects businesses with the right technology solutions to drive growth and efficiency.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Business Development, Client Relations, IT Consulting, Market Analysis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Nathan -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://d2gjqh9j26unp0.cloudfront.net/profilepic/89b30d19fdd8e164c13ff8885ae06b9e" alt="Nathan" class="member-image">
+              <h3>Nathan</h3>
+              <p>Junior IT Power BI Consultant</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/nathan-makadiama-92455a210?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADV5mawBxamF5DcNsUAzf0VhkDNbv3VVtKQ&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BK01MhEN9SZ6Aub%2FmDs8trg%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Nathan</h3>
+              <p class="team-member-bio">Nathan specializes in transforming complex data into actionable insights through Power BI.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Power BI, Data Visualization, DAX, SQL, Data Modeling, Marketing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hope -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://img.icons8.com/color/100/000000/circled-user-male-skin-type-6.png" alt="Hope" class="member-image">
+              <h3>Hope</h3>
+              <p>Junior IT Power Platform Consultant</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/lehlogonolo-malapane-8006aa248?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD1TugABqbzAgQdFu1QlMY-b9v0SzBCCULc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3Bq5%2B10KwRTn2e5rHd00lEkQ%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Hope</h3>
+              <p class="team-member-bio">Hope builds powerful business applications using the Microsoft Power Platform.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Power Apps, Power Automate, Dataverse, Canvas Apps, Model-Driven Apps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Angie -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://img.icons8.com/color/100/000000/circled-user-female-skin-type-3.png" alt="Angie" class="member-image">
+              <h3>Angie</h3>
+              <p>Junior IT Power Apps Developer</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Angie</h3>
+              <p class="team-member-bio">Angie develops custom Power Apps solutions that address specific business challenges.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Power Apps, UI/UX Design, JavaScript, Sharepoint, Office 365</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mohammed -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://img.icons8.com/color/100/000000/circled-user-male-skin-type-6.png" alt="Mohammed" class="member-image">
+              <h3>Mohammed</h3>
+              <p>Junior IT Power Pages Developer</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Mohammed</h3>
+              <p class="team-member-bio">Mohammed specializes in creating external-facing websites with Power Pages.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Power Pages, HTML/CSS/JS, Responsive Design, Web Accessibility</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lyborn -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://media.licdn.com/dms/image/v2/D5635AQEkx2g1-yGyYA/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1719437472002?e=1743966000&v=beta&t=8fRuEczU6rciEoB_JJH6kbIxzJKg5r1sEM2LOO_keaY" alt="Lyborn" class="member-image">
+              <h3>Lyborn</h3>
+              <p>Junior IT Power Apps Consultant</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/lyborn-nemo-444b43138?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACGg3rQBoB_XWCIOdrZe0NqswicG2iVEPhQ&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BRKxfpSxHRxGMk%2BPUXbNuSQ%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Lyborn</h3>
+              <p class="team-member-bio">Lyborn helps clients implement Power Apps solutions that transform their business processes.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Power Apps, Business Process Analyst, Solution Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Non-Technical Team Section -->
+    <section id="non-tech-team" class="section">
+      <h2>SV Bricks Team</h2>
+      <div class="team-grid">
+        <!-- Matimba -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://media.licdn.com/dms/image/v2/D4D03AQEs-wDTkH99TQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1719476603428?e=1749081600&v=beta&t=F3b0X4oK54lboxj66arooxatxqHgXm-Gdt8sNC0DaJY" alt="Matimba" class="member-image">
+              <h3>Matimba</h3>
+              <p>Chief Executive Officer</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/matimba-chavalala-0608632b?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAZbCogBtkHkQYbf-Rr2LsXsbxCyMkupZ8Q&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BFtKVsBPeTDW%2BTah%2FsCPirw%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Matimba</h3>
+              <p class="team-member-bio">As CEO, Matimba provides strategic direction and leadership for the entire organization.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Strategic Planning, Business Development, Financial Management, Leadership, Corporate Governance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Matlhatsi -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://media.licdn.com/dms/image/v2/D4D35AQHasosFod-f3Q/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1674394284969?e=1743966000&v=beta&t=ZsS3id5f3gUojyGNRdRMF-VggtV5l21d5L5FYFJuFBI" alt="Matlhatsi" class="member-image">
+              <h3>Matlhatsi</h3>
+              <p>Admin Manager</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/matlhatsi-makaneta-a3a695152?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAACTDqI4Bd6DBV6AwZ8lNclJAOUkjPoa8khM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BqjvNQqGASfyWZ9YhecExMA%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Matlhatsi</h3>
+              <p class="team-member-bio">Matlhatsi oversees all administrative operations, ensuring the company runs smoothly and efficiently.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Office Administration, Management, Process Imporvement, Team Coordination, Facilities Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Juliet -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://ik.imagekit.io/klownboy1166/Juliet.jpg?updatedAt=1743512735706" alt="Juliet" class="member-image">
+              <h3>Juliet</h3>
+              <p>Front Desk</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/mankhubelu-juliet-jonkomane-a85086243?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADxYZoUBYLhWgnutxnKrg-eW6SNZhCPvC4o&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BgtskKLa%2FSZC3QvazhWvtCA%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Juliet</h3>
+              <p class="team-member-bio">Juliet is the friendly face of our company, managing front desk operations and ensuring all clients are welcomed.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Customer Service, Reception, Call Handling, Appointment Scheduling, Visitor Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Fumani -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src= "https://ik.imagekit.io/klownboy1166/Dolly.jpg?updatedAt=1743512734631" alt="Fumani" class="member-image">
+              <h3>Fumani</h3>
+              <p>Junior Tender Account Officer</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Fumani</h3>
+              <p class="team-member-bio">Fumani manages tender documentation and ensures all submissions meet requirements and deadlines.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Tender Preparation, Deadline Management, Proposal Writing, Document Management, Compliance Checking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Xolani -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://media.licdn.com/dms/image/v2/D4D35AQGz3a535I38TA/profile-framedphoto-shrink_100_100/B4DZWvaN96HkAk-/0/1742404640906?e=1743966000&v=beta&t=0MfBjr3QXfKw72f9JspXPnmseGew1f-9vVnZyEhKAao" alt="Xolani" class="member-image">
+              <h3>Xolani</h3>
+              <p>Junior HR Representative</p>
+              <div class="social-links">
+                <a href="https://www.linkedin.com/in/xolani-comfort-dlamini-159741249?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAD2C75UBkgj98pTy-i1s-1x1iqvnIKK7Gyc&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BQ7a8U%2FsXSXmarrK6E0ONng%3D%3D"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Xolani</h3>
+              <p class="team-member-bio">Xolani supports our HR functions, fostering a positive work environment for all employees.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Recruitment, Employee Relations, Employee Onboarding, HR Administration, Policy Implementation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Shiluva -->
+        <div class="team-member-card">
+          <div class="team-member-card-inner">
+            <div class="team-member-front">
+              <img src="https://img.icons8.com/color/100/000000/circled-user-female-skin-type-3.png" alt="Shiluva" class="member-image">
+              <h3>Shiluva</h3>
+              <p>Junior Admin Intern</p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="team-member-back">
+              <h3>Shiluva</h3>
+              <p class="team-member-bio">Shiluva assists with tender preparation, ensuring all documentation is accurate and submitted on time.</p>
+              <div class="team-member-skills">
+                <h4>Skills & Expertise</h4>
+                <div class="skills-list">
+                  <span class="skill-tag">Tender Documentation, Account Coordination, Compliance Management, Bid Preparation, Client Communication</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Video Section -->
+    <section id="videos" class="section">
+      <h2>Our Videos</h2>
+      <div class="video-container">
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/upTohmZNJdI?si=DHhlDP-aMCZ4Obs4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-card">
+          <iframe src="https://www.youtube.com/embed/KwoKK-EHWBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Get In Touch</h2>
+      <div class="contact-form">
+        <form id="contactForm" action="https://formsubmit.co/bonny@renmatit.co.za" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission">
+          <input type="hidden" name="_next" value="#thank-you">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service" class="form-control">
+              <option value="">Select a service</option>
+              <option value="power-platform">Power Platform</option>
+              <option value="dynamics-365">Dynamics 365</option>
+              <option value="microsoft-365">Microsoft 365</option>
+              <option value="ai-solutions">AI Solutions</option>
+              <option value="cybersecurity">Cybersecurity</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+      
+      <!-- Thank You Section (hidden by default) -->
+      <div id="thank-you" class="thank-you">
+        <div class="thank-you-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Thank You!</h2>
+        <p>Your message has been sent successfully. We'll get back to you soon.</p>
+        <p>In the meantime, feel free to explore more of our services.</p>
+      </div>
+    </section>
+  </div>
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/27717201758" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <footer>
+    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQF3q-dLPxzwpw/company-logo_200_200/B4DZXR3v.GG4AQ-/0/1742982808029?e=2147483647&v=beta&t=E67CVx77zQLOklxG_s7ku60xvTKTjsn174PoGK8a7Zs" alt="RenMat IT Technologies Logo" class="footer-logo">
+    
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#ai">AI Services</a>
+      <a href="#cybersecurity">Security</a>
+      <a href="#team">Team</a>
+      <a href="#non-tech-team">Management</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    
+    <div class="social-media">
+      <a href="https://www.linkedin.com/company/renmat-it-technologies" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    
+    <p class="copyright">&copy; 2025 RenMat IT Technologies. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Custom Cursor
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      
+      gsap.to(cursorFollower, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.5,
+        ease: "power1.out"
+      });
+    });
+    
+    document.querySelectorAll('a, button, .team-member-card').forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor-active');
+        cursorFollower.classList.add('cursor-follower-active');
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-active');
+        cursorFollower.classList.remove('cursor-follower-active');
+      });
+    });
+    
+    // Binary Rain Effect
+    function createBinaryRain() {
+      const binaryRain = document.querySelector('.binary-rain');
+      const digits = '01';
+      const columns = Math.floor(window.innerWidth / 20);
+      
+      for (let i = 0; i < columns; i++) {
+        const digit = document.createElement('div');
+        digit.className = 'binary-digit';
+        digit.textContent = digits.charAt(Math.floor(Math.random() * digits.length));
+        digit.style.left = `${(i * 20) + Math.random() * 10}px`;
+        digit.style.animationDuration = `${5 + Math.random() * 10}s`;
+        digit.style.animationDelay = `${Math.random() * 5}s`;
+        binaryRain.appendChild(digit);
+      }
+    }
+    
+    // Disable right-click
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    
+    // Initialize Particles.js with red particles
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ff4d4d"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ff4d4d",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+    
+    // Animated Counter
+    function animateCounter(id, target, duration = 2000) {
+      const element = document.getElementById(id);
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          clearInterval(timer);
+          current = target;
+        }
+        element.textContent = Math.floor(current);
+      }, 16);
+    }
+    
+    // Start counters when section is visible
+    function startCounters() {
+      animateCounter("clients-count", 3);
+      animateCounter("projects-count", 20);
+      animateCounter("team-count", 15);
+      animateCounter("years-count", 2);
+    }
+    
+    // Form submission handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      
+      // Send form data using Fetch API
+      fetch('https://formsubmit.co/ajax/bonny@renmatit.co.za', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Hide form and show thank you message
+        document.querySelector('.contact-form').style.display = 'none';
+        document.getElementById('thank-you').style.display = 'block';
+        
+        // Scroll to thank you message
+        document.getElementById('thank-you').scrollIntoView({ behavior: 'smooth' });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting your form. Please try again later.');
+      });
+    });
+    
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Animate header
+    gsap.to("header", {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out"
+    });
+    
+    // Animate sections on scroll
+    document.querySelectorAll('.section').forEach(section => {
+      gsap.fromTo(section, 
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+    
+    // Animate feature cards
+    gsap.utils.toArray('.feature-card').forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+    
+    // Animate flip cards
+    gsap.utils.toArray('.flip-card').forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: i * 0.05,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+    
+    // Animate team member cards
+    gsap.utils.toArray('.team-member-card').forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+    
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: target,
+              offsetY: 80,
+              autoKill: true
+            },
+            ease: "power2.inOut"
+          });
+          
+          // If target is thank-you section, ensure it's visible
+          if (this.getAttribute('href') === '#thank-you') {
+            document.querySelector('.contact-form').style.display = 'none';
+            document.getElementById('thank-you').style.display = 'block';
+          }
+        }
+      });
+    });
+    
+    // Initialize binary rain and animations
+    window.addEventListener('load', () => {
+      createBinaryRain();
+      
+      // Start counters when home section is visible
+      ScrollTrigger.create({
+        trigger: "#home",
+        start: "top center",
+        onEnter: startCounters
+      });
+    });
+  </script>
+
+</body>
+</html>
