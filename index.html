@@ -1792,35 +1792,11 @@
           </div>
         </div>
         
-        <!-- Angie -->
-        <div class="team-member-card">
-          <div class="team-member-card-inner">
-            <div class="team-member-front">
-              <img src="https://img.icons8.com/color/100/000000/circled-user-female-skin-type-3.png" alt="Angie" class="member-image">
-              <h3>Angie</h3>
-              <p>Junior IT Power Apps Developer</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </div>
-            </div>
-            <div class="team-member-back">
-              <h3>Angie</h3>
-              <p class="team-member-bio">Angie develops custom Power Apps solutions that address specific business challenges.</p>
-              <div class="team-member-skills">
-                <h4>Skills & Expertise</h4>
-                <div class="skills-list">
-                  <span class="skill-tag">Power Apps, UI/UX Design, JavaScript, Sharepoint, Office 365</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         <!-- Mohammed -->
         <div class="team-member-card">
           <div class="team-member-card-inner">
             <div class="team-member-front">
-              <img src="https://img.icons8.com/color/100/000000/circled-user-male-skin-type-6.png" alt="Mohammed" class="member-image">
+              <img src="https://ik.imagekit.io/klownboy1166/Image.png?updatedAt=1743586418074" alt="Mohammed" class="member-image">
               <h3>Mohammed</h3>
               <p>Junior IT Power Pages Developer</p>
               <div class="social-links">
@@ -1970,7 +1946,7 @@
         <div class="team-member-card">
           <div class="team-member-card-inner">
             <div class="team-member-front">
-              <img src="https://media.licdn.com/dms/image/v2/D4D35AQGz3a535I38TA/profile-framedphoto-shrink_100_100/B4DZWvaN96HkAk-/0/1742404640906?e=1743966000&v=beta&t=0MfBjr3QXfKw72f9JspXPnmseGew1f-9vVnZyEhKAao" alt="Xolani" class="member-image">
+              <img src="https://ik.imagekit.io/klownboy1166/IMG-20250402-WA0005.jpg?updatedAt=1743587380972" alt="Xolani" class="member-image">
               <h3>Xolani</h3>
               <p>Junior HR Representative</p>
               <div class="social-links">
@@ -2033,10 +2009,8 @@
     <section id="contact" class="section">
       <h2>Get In Touch</h2>
       <div class="contact-form">
-        <form id="contactForm" action="https://formsubmit.co/bonny@renmatit.co.za" method="POST">
-          <input type="hidden" name="_subject" value="New Contact Form Submission">
-          <input type="hidden" name="_next" value="#thank-you">
-          <input type="hidden" name="_captcha" value="false">
+        <form id="contactForm" action="https://formspree.io/f/xeoaronb" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission from RenMat IT">
           
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -2076,7 +2050,7 @@
       </div>
       
       <!-- Thank You Section (hidden by default) -->
-      <div id="thank-you" class="thank-you">
+      <div id="thank-you" class="thank-you" style="display: none;">
         <div class="thank-you-icon">
           <i class="fas fa-check-circle"></i>
         </div>
@@ -2301,26 +2275,44 @@
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get form data
-      const formData = new FormData(this);
+      const form = e.target;
+      const formData = new FormData(form);
+      const submitBtn = form.querySelector('button[type="submit"]');
       
-      // Send form data using Fetch API
-      fetch('https://formsubmit.co/ajax/bonny@renmatit.co.za', {
+      // Disable submit button to prevent multiple submissions
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+      
+      fetch(form.action, {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
-      .then(response => response.json())
-      .then(data => {
-        // Hide form and show thank you message
-        document.querySelector('.contact-form').style.display = 'none';
-        document.getElementById('thank-you').style.display = 'block';
-        
-        // Scroll to thank you message
-        document.getElementById('thank-you').scrollIntoView({ behavior: 'smooth' });
+      .then(response => {
+        if (response.ok) {
+          // Hide form and show thank you message
+          document.querySelector('.contact-form').style.display = 'none';
+          document.getElementById('thank-you').style.display = 'block';
+          
+          // Scroll to thank you message
+          document.getElementById('thank-you').scrollIntoView({ behavior: 'smooth' });
+          
+          // Reset form
+          form.reset();
+        } else {
+          throw new Error('Network response was not ok');
+        }
       })
       .catch(error => {
         console.error('Error:', error);
-        alert('There was an error submitting your form. Please try again later.');
+        alert('There was an error submitting your form. Please try again later or contact us directly at bonny@renmatit.co.za');
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
       });
     });
     
@@ -2410,31 +2402,45 @@
       );
     });
     
-    // Smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for navigation - UPDATED VERSION
+    document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          gsap.to(window, {
-            duration: 1,
-            scrollTo: {
-              y: target,
-              offsetY: 80,
-              autoKill: true
-            },
-            ease: "power2.inOut"
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Calculate the offset position considering the fixed header
+          const headerHeight = document.querySelector('header').offsetHeight;
+          const navHeight = document.querySelector('nav').offsetHeight;
+          const totalOffset = headerHeight + navHeight;
+          
+          // Get the target element's position
+          const targetPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = targetPosition + window.pageYOffset - totalOffset;
+          
+          // Smooth scroll to the target
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
           });
           
+          // Update URL hash without jumping
+          if (history.pushState) {
+            history.pushState(null, null, targetId);
+          } else {
+            location.hash = targetId;
+          }
+          
           // If target is thank-you section, ensure it's visible
-          if (this.getAttribute('href') === '#thank-you') {
+          if (targetId === '#thank-you') {
             document.querySelector('.contact-form').style.display = 'none';
             document.getElementById('thank-you').style.display = 'block';
           }
         }
       });
     });
-    
+
     // Initialize binary rain and animations
     window.addEventListener('load', () => {
       createBinaryRain();
@@ -2447,6 +2453,5 @@
       });
     });
   </script>
-
 </body>
 </html>
